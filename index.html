@@ -204,6 +204,12 @@
     font-size: 0.75rem; color: var(--ink-soft);
   }
 
+  .about-photo {
+    margin-top: 3.5rem; border-radius: 12px; overflow: hidden;
+    aspect-ratio: 21 / 9;
+  }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 38%; }
+
   /* ---------- Pastor ---------- */
   .pastor-grid {
     display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem;
@@ -306,8 +312,14 @@
   /* ---------- Visit ---------- */
   .visit-grid {
     margin-top: 3rem;
-    display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; align-items: start;
+    display: grid; grid-template-columns: 1fr 0.72fr 1fr; gap: 2.4rem;
+    align-items: stretch;
   }
+  .visit-photo {
+    border-radius: 12px; overflow: hidden; min-height: 420px;
+  }
+  .visit-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .visit-note { margin-top: 1.4rem; font-size: 0.9rem; color: var(--ink-soft); }
   .visit-details { display: grid; gap: 1.4rem; }
   .visit-row strong {
     display: block; font-size: 0.75rem; font-weight: 600;
@@ -371,6 +383,8 @@
     }
     .nav-toggle { display: block; }
     .about-grid, .pastor-grid, .watch-grid, .visit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-photo { aspect-ratio: 16 / 10; }
+    .visit-photo { min-height: 0; aspect-ratio: 4 / 3; }
     .pastor-photo { max-width: 420px; }
     .schedule-row { grid-template-columns: 1fr; gap: 0.3rem; }
     .schedule-time { margin-top: 0.2rem; }
@@ -467,6 +481,9 @@
           <span>Exodus 25:8</span>
         </div>
       </div>
+    </div>
+    <div class="container about-photo">
+      <img src="assets/worship-service.jpg" alt="The worship team leading the congregation at the Worship Center" loading="lazy">
     </div>
   </section>
 
@@ -684,6 +701,9 @@
             <a class="btn btn-ghost" href="mailto:aronhabrit.international@gmail.com">Email Us</a>
           </div>
         </div>
+        <div class="visit-photo">
+          <img src="assets/entrance.jpg" alt="The church entrance at 116 St Marys Pl, marked by the purple AHIM banner" loading="lazy">
+        </div>
         <div class="map-frame">
           <iframe
             src="https://www.google.com/maps?q=116+St+Marys+Pl,+Laurel,+MD+20707&output=embed"
@@ -691,6 +711,7 @@
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
+      <p class="visit-note">Look for the brick entrance with the purple AHIM banner at number 116.</p>
     </div>
   </section>
 
