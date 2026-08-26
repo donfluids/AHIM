@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aron HaBrit International Ministries | Jesus Reigns Worship Center, Laurel MD</title>
+<meta name="description" content="Aron HaBrit International Ministries (AHIM), Jesus Reigns Worship Center in Laurel, Maryland. Services in Malayalam and English with songs in Tamil and Hindi. Sunday worship at 10:00 AM.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube.com https://www.google.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta name="theme-color" content="#16213a">
+
+<!-- Social sharing previews. Update these URLs if the site moves to a custom domain. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aron HaBrit International Ministries | Jesus Reigns Worship Center">
+<meta property="og:description" content="A church family in Laurel, Maryland. Services in Malayalam and English with songs in Tamil and Hindi. Sunday worship 10:00 AM at 116 St Marys Pl.">
+<meta property="og:url" content="https://donfluids.github.io/churchrepo/">
+<meta property="og:image" content="https://donfluids.github.io/churchrepo/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "name": "Aron HaBrit International Ministries - Jesus Reigns Worship Center",
+  "alternateName": "AHIM Jesus Reigns Worship Center",
+  "url": "https://donfluids.github.io/churchrepo/",
+  "email": "aronhabrit.international@gmail.com",
+  "telephone": "+1-301-537-0790",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "116 St Marys Pl",
+    "addressLocality": "Laurel",
+    "addressRegion": "MD",
+    "postalCode": "20707",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "19:30",
+      "closes": "21:30"
+    }
+  ],
+  "sameAs": [
+    "https://www.youtube.com/@AronHaBrit.International",
+    "https://www.facebook.com/AronHaBrit.International/"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1c2a44;
+    --navy-dark: #16213a;
+    --gold: #b98a2e;        /* decorative accents and text on dark backgrounds */
+    --gold-dark: #8a6415;   /* text and button fills on light backgrounds (WCAG AA) */
+    --gold-hero: #c9a04a;   /* small text on the navy hero */
+    --bg: #ffffff;
+    --bg-alt: #f6f5f1;
+    --ink: #23282f;
+    --ink-soft: #55606e;
+    --line: #e5e3dc;
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-padding-top: 84px; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .container { width: min(1060px, 90%); margin-inline: auto; }
+
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--navy-dark);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 0;
+  }
+  .brand { text-decoration: none; color: #fff; line-height: 1.3; }
+  .brand strong {
+    display: block; font-family: var(--font-display);
+    font-size: 1.1rem; font-weight: 600;
+  }
+  .brand span { display: block; font-size: 0.73rem; color: #a9b3c6; }
+  nav.links { display: flex; align-items: center; gap: 1.6rem; }
+  nav.links a {
+    color: #ccd3e0; text-decoration: none; font-size: 0.88rem; font-weight: 500;
+  }
+  nav.links a:hover { color: #fff; }
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem; border-radius: 8px;
+    font-weight: 600; font-size: 0.9rem; text-decoration: none;
+  }
+  .btn-gold { background: var(--gold-dark); color: #fff; }
+  .btn-gold:hover { background: #705110; }
+  .btn-live { padding: 0.5rem 1.1rem; font-size: 0.84rem; }
+  nav.links a.btn-gold { color: #fff; }
+  .nav-toggle {
+    display: none; background: none; border: 0; color: #fff;
+    font-size: 1.5rem; cursor: pointer; line-height: 1;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 6.5rem 0 5.5rem;
+  }
+  .hero-kicker {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold-hero);
+  }
+  .hero h1 {
+    font-style: italic; font-weight: 500;
+    font-size: clamp(2.3rem, 5.2vw, 3.9rem);
+    line-height: 1.14; letter-spacing: -0.02em;
+    max-width: 820px; margin-top: 1.3rem;
+  }
+  .verse-ref {
+    margin-top: 0.9rem; font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #a9b3c6;
+  }
+  .hero .sub {
+    margin-top: 1.8rem; max-width: 540px;
+    color: #c3cbda; font-size: 1.02rem;
+  }
+  .hero-ctas { margin-top: 2.2rem; display: flex; gap: 0.9rem; flex-wrap: wrap; }
+  .btn-outline { border: 1px solid rgba(255, 255, 255, 0.45); color: #fff; }
+  .btn-outline:hover { border-color: #fff; }
+  .hero-meta {
+    margin-top: 4rem;
+    display: flex; gap: 3.5rem; flex-wrap: wrap;
+    color: #a9b3c6; font-size: 0.84rem;
+  }
+  .hero-meta strong { color: #fff; display: block; font-size: 0.97rem; font-weight: 600; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 5.5rem 0; }
+  .band-alt { background: var(--bg-alt); }
+  .section-title {
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+    line-height: 1.15;
+  }
+  .section-intro { color: var(--ink-soft); max-width: 600px; margin-top: 1rem; }
+  .section-intro + .section-intro { margin-top: 0.8rem; }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem;
+    align-items: start;
+  }
+  .name-card {
+    background: var(--bg-alt);
+    border-radius: 12px; padding: 2rem 2.2rem;
+  }
+  .name-card h3 { font-size: 1.3rem; font-weight: 600; }
+  .name-card p { margin-top: 0.7rem; color: var(--ink-soft); font-size: 0.93rem; }
+  .name-card .verse {
+    margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid var(--line);
+    font-family: var(--font-display); font-style: italic; font-size: 1.05rem;
+    color: var(--navy);
+  }
+  .name-card .verse span {
+    display: block; margin-top: 0.4rem;
+    font-family: var(--font-body); font-style: normal;
+    font-size: 0.75rem; color: var(--ink-soft);
+  }
+
+  /* ---------- Pastor ---------- */
+  .pastor-grid {
+    display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem;
+    align-items: center;
+  }
+  .pastor-photo {
+    border-radius: 12px; overflow: hidden;
+    aspect-ratio: 4 / 5; background: var(--navy);
+  }
+  .pastor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .pastor-name {
+    font-family: var(--font-display); font-size: 1.35rem; font-weight: 600;
+    color: var(--navy); margin-top: 1.5rem;
+  }
+  .pastor-role { font-size: 0.85rem; color: var(--gold-dark); font-weight: 600; }
+
+  /* ---------- Schedule ---------- */
+  .schedule { margin-top: 3rem; border-top: 1px solid var(--line); }
+  .schedule-row {
+    display: grid; grid-template-columns: 170px 1fr auto;
+    gap: 2rem; align-items: baseline;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--line);
+  }
+  .schedule-day {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold-dark);
+  }
+  .schedule-name {
+    font-family: var(--font-display); font-size: 1.3rem; font-weight: 600;
+    color: var(--navy);
+  }
+  .schedule-note { margin-top: 0.25rem; font-size: 0.88rem; color: var(--ink-soft); }
+  .schedule-time {
+    font-weight: 600; font-size: 1rem; color: var(--navy); white-space: nowrap;
+  }
+  .schedule-row.main .schedule-name { font-size: 1.55rem; }
+  .schedule-foot { margin-top: 1.6rem; color: var(--ink-soft); font-size: 0.9rem; }
+  .schedule-foot a { color: var(--gold-dark); font-weight: 600; }
+
+  /* ---------- Events ---------- */
+  .event-grid {
+    margin-top: 3rem;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem;
+  }
+  .event { min-width: 0; }
+  .event a.flyer {
+    display: block; border-radius: 12px; overflow: hidden;
+    aspect-ratio: 4 / 5; background: var(--navy);
+  }
+  .event img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top;
+  }
+  .event a.flyer:hover img { opacity: 0.88; }
+  .event .date {
+    margin-top: 1rem; font-size: 0.73rem; font-weight: 600;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold-dark);
+  }
+  .event h3 { font-size: 1.15rem; font-weight: 600; margin-top: 0.3rem; color: var(--navy); }
+  .event p { margin-top: 0.4rem; font-size: 0.86rem; color: var(--ink-soft); }
+
+  /* ---------- Watch ---------- */
+  .watch { background: var(--navy-dark); color: #fff; }
+  .watch .section-intro { color: #c3cbda; }
+  .watch-grid {
+    margin-top: 3rem;
+    display: grid; grid-template-columns: 1.6fr 1fr; gap: 3rem; align-items: center;
+  }
+  .video-frame {
+    position: relative; border-radius: 12px; overflow: hidden;
+    aspect-ratio: 16 / 9;
+  }
+  .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .platforms { display: grid; gap: 1.8rem; align-content: center; }
+  .platform {
+    display: flex; align-items: center; gap: 1.1rem;
+    text-decoration: none; color: #fff;
+  }
+  .platform-icon {
+    flex: none; width: 46px; height: 46px; border-radius: 10px;
+    display: grid; place-items: center;
+  }
+  .platform-icon svg { width: 22px; height: 22px; fill: #fff; }
+  .platform.yt .platform-icon { background: #ff0000; }
+  .platform.fb .platform-icon { background: #1877f2; }
+  .platform strong { display: block; font-size: 1rem; }
+  .platform:hover strong { text-decoration: underline; }
+  .platform span { font-size: 0.84rem; color: #a9b3c6; }
+
+  /* ---------- Ministries ---------- */
+  .ministry-grid {
+    margin-top: 2.5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem;
+  }
+  .ministry {
+    padding: 1.6rem 0; border-top: 1px solid var(--line);
+  }
+  .ministry h3 { font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+  .ministry p { margin-top: 0.35rem; font-size: 0.9rem; color: var(--ink-soft); }
+
+  /* ---------- Visit ---------- */
+  .visit-grid {
+    margin-top: 3rem;
+    display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; align-items: start;
+  }
+  .visit-details { display: grid; gap: 1.4rem; }
+  .visit-row strong {
+    display: block; font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: 0.15rem;
+  }
+  .visit-row p, .visit-row a { color: var(--ink); font-size: 0.97rem; text-decoration: none; }
+  .visit-row a:hover { text-decoration: underline; }
+  .visit-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.6rem; }
+  .btn-navy { background: var(--navy); color: #fff; }
+  .btn-navy:hover { background: var(--navy-dark); }
+  .btn-ghost { border: 1px solid var(--navy); color: var(--navy); }
+  .map-frame {
+    border-radius: 12px; overflow: hidden; min-height: 420px;
+  }
+  .map-frame iframe { width: 100%; height: 100%; min-height: 420px; border: 0; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy-dark); color: #a9b3c6;
+    padding: 3.5rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem;
+    padding-bottom: 2.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  footer .footer-h {
+    color: #fff; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  footer p, footer a { font-size: 0.88rem; color: #a9b3c6; text-decoration: none; }
+  footer a:hover { color: #fff; }
+  .footer-links { display: grid; gap: 0.5rem; }
+  .footer-social { display: flex; gap: 0.7rem; margin-top: 1.2rem; }
+  .footer-social a {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: grid; place-items: center;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .footer-social a:hover { background: rgba(255, 255, 255, 0.16); }
+  .footer-social svg { width: 18px; height: 18px; fill: #fff; }
+  .copyright {
+    padding-top: 1.8rem; text-align: center; font-size: 0.78rem; color: #8b96aa;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    nav.links {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: flex-start; gap: 0;
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      display: none; padding: 0.5rem 5%;
+    }
+    nav.links.open { display: flex; }
+    nav.links a { padding: 0.85rem 0; width: 100%; }
+    nav.links .btn-live { margin: 0.5rem 0 1rem; }
+    .nav-toggle { display: block; }
+    .about-grid, .pastor-grid, .watch-grid, .visit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .pastor-photo { max-width: 420px; }
+    .schedule-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    .schedule-time { margin-top: 0.2rem; }
+    .event-grid { grid-template-columns: 1fr 1fr; }
+    .ministry-grid { grid-template-columns: 1fr; gap: 0; }
+    .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+  }
+  @media (max-width: 520px) {
+    .event-grid { grid-template-columns: 1fr; }
+    .hero { padding: 4.5rem 0 4rem; }
+    .hero-meta { gap: 1.6rem 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <strong>Aron HaBrit International Ministries</strong>
+      <span>Jesus Reigns Worship Center · Laurel, MD</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <nav class="links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#pastor">Our Pastor</a>
+      <a href="#services">Service Times</a>
+      <a href="#events">Events</a>
+      <a href="#watch">Watch Online</a>
+      <a href="#visit">Visit</a>
+      <a class="btn btn-gold btn-live" href="https://www.youtube.com/@AronHaBrit.International" target="_blank" rel="noopener">Watch Live</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-kicker">Aron HaBrit International Ministries · Jesus Reigns Worship Center</p>
+      <h1>&ldquo;You shall also be a crown of glory in the hand of the LORD&rdquo;</h1>
+      <p class="verse-ref">Isaiah 62:3</p>
+      <p class="sub">
+        A church family in Laurel, Maryland. Our services are in Malayalam and
+        English, and we sing in Tamil and Hindi too. Join us on Sundays, in
+        person or online.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#visit">Visit Us</a>
+        <a class="btn btn-outline" href="#watch">Watch Online</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Sundays, 10:00 AM</strong>Worship Service</div>
+        <div><strong>116 St Marys Pl</strong>Laurel, MD 20707</div>
+        <div><strong>Malayalam &amp; English</strong>Songs also in Tamil &amp; Hindi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container about-grid">
+      <div>
+        <h2 class="section-title">About Our Church</h2>
+        <p class="section-intro">
+          Aron HaBrit International Ministries was established on October 10,
+          2016 as a revival church in Laurel.
+        </p>
+        <p class="section-intro">
+          Our services are held in Malayalam and English, and our worship
+          includes songs in Tamil and Hindi. Families of many backgrounds call
+          this church home, and every generation worships together here.
+          Children attend Sunday School during the service; youth and adults
+          worship together.
+        </p>
+      </div>
+      <div class="name-card">
+        <h3>Our Name</h3>
+        <p>
+          &ldquo;Aron HaBrit&rdquo; is Hebrew for the Ark of the Covenant, the
+          place where God's presence dwelt among His people. It reflects our
+          desire to be a church built around the presence of God.
+        </p>
+        <div class="verse">
+          &ldquo;Let them make Me a sanctuary, that I may dwell among them.&rdquo;
+          <span>Exodus 25:8</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pastor -->
+  <section id="pastor" class="band-alt">
+    <div class="container pastor-grid">
+      <div class="pastor-photo">
+        <img src="assets/pastor-monish-stephen.jpg" alt="Pastor Monish Stephen">
+      </div>
+      <div>
+        <h2 class="section-title">Our Pastor</h2>
+        <p class="pastor-name">Pastor Monish Stephen <span class="pastor-role">· Senior Pastor</span></p>
+        <p class="section-intro">
+          Pastor Monish Stephen leads Aron HaBrit International Ministries with
+          a prophetic calling. His ministry is marked by healing, prophecy, and
+          the interpretation of dreams and visions, and he preaches in Malayalam
+          and English at our Sunday services and special meetings.
+        </p>
+        <p class="section-intro">
+          Through the year, guest ministers such as Prophet Tijo Thomas and
+          Pastor Shajan George join him for conferences and revival services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Times -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Service Times</h2>
+      <p class="section-intro">
+        Our main gathering is on Sunday morning, with services and prayer
+        meetings through the week. There are no meetings on Wednesdays.
+      </p>
+      <div class="schedule">
+        <div class="schedule-row main">
+          <div class="schedule-day">Every Sunday</div>
+          <div>
+            <div class="schedule-name">Sunday Worship</div>
+            <p class="schedule-note">Worship, preaching, and Holy Communion in Malayalam and English, with songs in Tamil and Hindi. Sunday School for children runs during the service.</p>
+          </div>
+          <div class="schedule-time">10:00 AM – 2:00 PM</div>
+        </div>
+        <div class="schedule-row">
+          <div class="schedule-day">Every Saturday</div>
+          <div>
+            <div class="schedule-name">Praise, Worship &amp; Healing</div>
+            <p class="schedule-note">An evening of praise and worship with a healing service.</p>
+          </div>
+          <div class="schedule-time">7:30 – 9:30 PM</div>
+        </div>
+        <div class="schedule-row">
+          <div class="schedule-day">Every Friday</div>
+          <div>
+            <div class="schedule-name">Prayer Gathering</div>
+            <p class="schedule-note">Weekly prayer gathering at the church.</p>
+          </div>
+          <div class="schedule-time">8:00 PM</div>
+        </div>
+        <div class="schedule-row">
+          <div class="schedule-day">Tuesday &amp; Thursday</div>
+          <div>
+            <div class="schedule-name">Online Prayer Meeting</div>
+            <p class="schedule-note">Held virtually only — join the prayer meeting from home.</p>
+          </div>
+          <div class="schedule-time">8:30 PM</div>
+        </div>
+      </div>
+      <p class="schedule-foot">
+        Questions about timings? Call
+        <a href="tel:+13015370790">+1 (301) 537-0790</a>, email
+        <a href="mailto:aronhabrit.international@gmail.com">aronhabrit.international@gmail.com</a>,
+        or message us on <a href="https://www.facebook.com/AronHaBrit.International/" target="_blank" rel="noopener">Facebook</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="band-alt">
+    <div class="container">
+      <h2 class="section-title">Events</h2>
+      <p class="section-intro">
+        Highlights from this year's gatherings. New events are announced on our
+        <a href="https://www.facebook.com/AronHaBrit.International/" target="_blank" rel="noopener" style="color: var(--gold-dark); font-weight: 600;">Facebook page</a>.
+      </p>
+      <div class="event-grid">
+        <div class="event">
+          <a class="flyer" href="assets/events/21-days-fasting.jpg" target="_blank" rel="noopener">
+            <img src="assets/events/21-days-fasting.jpg" alt="21 Days Fasting Prayer flyer" loading="lazy">
+          </a>
+          <div class="date">June 2026</div>
+          <h3>21 Days Fasting Prayer</h3>
+          <p>Continuous praise and worship, healing, deliverance, and prophetic impartation. Pastor Monish Stephen ministering.</p>
+        </div>
+        <div class="event">
+          <a class="flyer" href="assets/events/prophetical-sunday.jpg" target="_blank" rel="noopener">
+            <img src="assets/events/prophetical-sunday.jpg" alt="Glorious Prophetical Sunday flyer" loading="lazy">
+          </a>
+          <div class="date">June 28, 2026</div>
+          <h3>Glorious Prophetical Sunday</h3>
+          <p>With Pastor Monish Stephen and guest minister Prophet Tijo Thomas.</p>
+        </div>
+        <div class="event">
+          <a class="flyer" href="assets/events/deliverance-conference.jpg" target="_blank" rel="noopener">
+            <img src="assets/events/deliverance-conference.jpg" alt="Glorious Deliverance Conference flyer" loading="lazy">
+          </a>
+          <div class="date">August 8–9, 2026</div>
+          <h3>Glorious Deliverance Conference</h3>
+          <p>Special conference with guest minister Pastor Shajan George. Saturday 8:00 PM and Sunday 10:00 AM.</p>
+        </div>
+        <div class="event">
+          <a class="flyer" href="assets/events/vbs-2026.jpg" target="_blank" rel="noopener">
+            <img src="assets/events/vbs-2026.jpg" alt="2026 Vacation Bible School flyer" loading="lazy">
+          </a>
+          <div class="date">August 20–22, 2026</div>
+          <h3>Vacation Bible School</h3>
+          <p>&ldquo;Armor of God: God Will Fight Our Giants.&rdquo; Three days of Bible lessons and activities for ages 4 and up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Watch Online -->
+  <section id="watch" class="watch">
+    <div class="container">
+      <h2 class="section-title">Watch Online</h2>
+      <p class="section-intro">
+        Sunday services and special meetings are streamed on YouTube and Facebook.
+      </p>
+      <div class="watch-grid">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/bqKz5bnweMQ"
+            title="Aron HaBrit Jesus Reigns Worship Center Sunday Service"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="platforms">
+          <a class="platform yt" href="https://www.youtube.com/@AronHaBrit.International" target="_blank" rel="noopener">
+            <span class="platform-icon">
+              <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+            </span>
+            <span>
+              <strong>YouTube</strong>
+              <span>Live streams and full services</span>
+            </span>
+          </a>
+          <a class="platform fb" href="https://www.facebook.com/AronHaBrit.International/" target="_blank" rel="noopener">
+            <span class="platform-icon">
+              <svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg>
+            </span>
+            <span>
+              <strong>Facebook</strong>
+              <span>Announcements and updates</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ministries -->
+  <section id="ministries">
+    <div class="container">
+      <h2 class="section-title">Ministries</h2>
+      <div class="ministry-grid">
+        <div class="ministry">
+          <h3>Worship</h3>
+          <p>The worship team leads songs in Malayalam, English, Tamil, and Hindi every Sunday.</p>
+        </div>
+        <div class="ministry">
+          <h3>Sunday School</h3>
+          <p>Bible lessons and activities for children during the Sunday service.</p>
+        </div>
+        <div class="ministry">
+          <h3>Youth</h3>
+          <p>Bible study and fellowship for young people and young adults.</p>
+        </div>
+        <div class="ministry">
+          <h3>Prayer &amp; Outreach</h3>
+          <p>Intercessory prayer and service to the Laurel community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section id="visit" class="band-alt">
+    <div class="container">
+      <h2 class="section-title">Visit Us</h2>
+      <div class="visit-grid">
+        <div class="visit-details">
+          <div class="visit-row">
+            <strong>Address</strong>
+            <p>116 St Marys Pl, Laurel, MD 20707</p>
+          </div>
+          <div class="visit-row">
+            <strong>Sunday Worship</strong>
+            <p>10:00 AM – 2:00 PM, Malayalam &amp; English</p>
+          </div>
+          <div class="visit-row">
+            <strong>Saturday Service</strong>
+            <p>7:30 – 9:30 PM, Praise, Worship &amp; Healing</p>
+          </div>
+          <div class="visit-row">
+            <strong>Phone</strong>
+            <a href="tel:+13015370790">+1 (301) 537-0790</a>
+          </div>
+          <div class="visit-row">
+            <strong>Email</strong>
+            <a href="mailto:aronhabrit.international@gmail.com">aronhabrit.international@gmail.com</a>
+          </div>
+          <div class="visit-cta">
+            <a class="btn btn-navy" href="https://www.google.com/maps/dir/?api=1&destination=116+St+Marys+Pl,+Laurel,+MD+20707" target="_blank" rel="noopener">Get Directions</a>
+            <a class="btn btn-ghost" href="mailto:aronhabrit.international@gmail.com">Email Us</a>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=116+St+Marys+Pl,+Laurel,+MD+20707&output=embed"
+            title="Map to Aron HaBrit Jesus Reigns Worship Center"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-h">Aron HaBrit International Ministries</div>
+        <p>
+          Jesus Reigns Worship Center. A church family in Laurel, Maryland
+          with services in Malayalam and English and songs in Tamil and
+          Hindi. Established October 10, 2016.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@AronHaBrit.International" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/AronHaBrit.International/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Links</div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#pastor">Our Pastor</a>
+          <a href="#services">Service Times</a>
+          <a href="#events">Events</a>
+          <a href="#watch">Watch Online</a>
+          <a href="#ministries">Ministries</a>
+          <a href="#visit">Visit</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Contact</div>
+        <div class="footer-links">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=116+St+Marys+Pl,+Laurel,+MD+20707" target="_blank" rel="noopener">116 St Marys Pl, Laurel, MD 20707</a>
+          <a href="tel:+13015370790">+1 (301) 537-0790</a>
+          <a href="mailto:aronhabrit.international@gmail.com">aronhabrit.international@gmail.com</a>
+          <a href="https://www.youtube.com/@AronHaBrit.International" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.facebook.com/AronHaBrit.International/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year">2026</span> Aron HaBrit International Ministries, Jesus Reigns Worship Center. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('#navlinks a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      document.getElementById('navlinks').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
