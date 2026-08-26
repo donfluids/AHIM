@@ -134,19 +134,45 @@
 
   /* ---------- Hero ---------- */
   .hero {
-    position: relative;
-    background: var(--navy) url("assets/hero-photo.jpg") center 22% / cover no-repeat;
+    position: relative; overflow: hidden;
+    background: var(--navy);
     color: #fff;
     padding: 6.5rem 0 5.5rem;
   }
+  .hero-media { position: absolute; inset: 0; z-index: 0; }
+  .hero-media img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 30%;
+    will-change: transform, opacity;
+  }
+  .hero-media .frame-a { animation: drift-a 30s ease-in-out infinite alternate, fade-a 44s ease-in-out infinite; }
+  .hero-media .frame-b { opacity: 0; animation: drift-b 30s ease-in-out infinite alternate, fade-b 44s ease-in-out infinite; }
+  @keyframes drift-a {
+    from { transform: scale(1.02); }
+    to   { transform: scale(1.1) translate(-1.5%, -2%); }
+  }
+  @keyframes drift-b {
+    from { transform: scale(1.1) translate(1.5%, -1.5%); }
+    to   { transform: scale(1.02); }
+  }
+  @keyframes fade-a {
+    0%, 42% { opacity: 1; } 50%, 92% { opacity: 0; } 100% { opacity: 1; }
+  }
+  @keyframes fade-b {
+    0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; }
+  }
   /* Darkening veil so the verse stays legible over the photo */
   .hero::before {
-    content: ""; position: absolute; inset: 0;
+    content: ""; position: absolute; inset: 0; z-index: 1;
     background:
       linear-gradient(100deg, rgba(16, 24, 43, 0.86) 0%, rgba(17, 26, 46, 0.72) 42%, rgba(19, 29, 50, 0.40) 100%),
       linear-gradient(to bottom, rgba(15, 23, 40, 0.38), rgba(15, 23, 40, 0.22));
   }
-  .hero .container { position: relative; z-index: 1; }
+  .hero .container { position: relative; z-index: 2; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-media img { animation: none; }
+    .hero-media .frame-b { display: none; }
+  }
   .hero h1 {
     font-style: italic; font-weight: 500;
     font-size: clamp(2.3rem, 5.2vw, 3.9rem);
@@ -209,9 +235,15 @@
     display: grid; grid-template-columns: 1.55fr 1fr;
     grid-template-rows: 232px 232px; gap: 1.1rem;
   }
-  .about-collage > div { border-radius: 12px; overflow: hidden; }
+  .about-collage > div { position: relative; border-radius: 12px; overflow: hidden; }
   .about-collage .collage-main { grid-row: 1 / 3; }
   .about-collage img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+  .collage-cap {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 2.6rem 1.1rem 0.8rem;
+    background: linear-gradient(to top, rgba(16, 24, 42, 0.82) 40%, transparent);
+    color: #fff; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.01em;
+  }
 
   /* ---------- Photo band ---------- */
   .photo-band {
@@ -452,6 +484,10 @@
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img class="frame-a" src="assets/hero-photo.jpg" alt="">
+      <img class="frame-b" src="assets/hero-photo-2.jpg" alt="" loading="lazy">
+    </div>
     <div class="container">
       <h1>&ldquo;You shall also be a crown of glory in the hand of the LORD&rdquo;</h1>
       <p class="verse-ref">Isaiah 62:3</p>
@@ -505,12 +541,15 @@
     <div class="container about-collage">
       <div class="collage-main">
         <img src="assets/worship-service.jpg" alt="The worship team leading the congregation at the Worship Center" loading="lazy">
+        <span class="collage-cap">Sunday worship at the Worship Center</span>
       </div>
       <div>
-        <img src="assets/about-2.jpg" alt="Musicians leading a song at the keyboard and guitar" loading="lazy">
+        <img src="assets/baptism.jpg" alt="A believer being baptized in the river" loading="lazy">
+        <span class="collage-cap">Baptism day</span>
       </div>
       <div>
-        <img src="assets/about-3.jpg" alt="Singers leading worship in front of the flags" loading="lazy">
+        <img src="assets/kids-ministry.jpg" alt="Children and teachers of the kids ministry" loading="lazy">
+        <span class="collage-cap">Kids ministry</span>
       </div>
     </div>
   </section>
