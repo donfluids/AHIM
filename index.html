@@ -104,7 +104,11 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 1rem 0;
   }
-  .brand { text-decoration: none; color: #fff; line-height: 1.3; }
+  .brand {
+    text-decoration: none; color: #fff; line-height: 1.3;
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .brand img { width: 42px; height: 42px; flex: none; }
   .brand strong {
     display: block; font-family: var(--font-display);
     font-size: 1.1rem; font-weight: 600;
@@ -326,6 +330,7 @@
     display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem;
     padding-bottom: 2.4rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
+  .footer-logo { width: 56px; height: 56px; margin-bottom: 1rem; }
   footer .footer-h {
     color: #fff; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
     text-transform: uppercase; margin-bottom: 1rem;
@@ -366,6 +371,11 @@
     .ministry-grid { grid-template-columns: 1fr; gap: 0; }
     .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
   }
+  @media (max-width: 560px) {
+    .brand img { width: 36px; height: 36px; }
+    .brand strong { font-size: 0.88rem; }
+    .brand span { font-size: 0.66rem; }
+  }
   @media (max-width: 520px) {
     .event-grid { grid-template-columns: 1fr; }
     .hero { padding: 4.5rem 0 4rem; }
@@ -378,8 +388,11 @@
 <header>
   <div class="container nav">
     <a class="brand" href="#home">
-      <strong>Aron HaBrit International Ministries</strong>
-      <span>Jesus Reigns Worship Center · Laurel, MD</span>
+      <img src="assets/ahim-logo.png" alt="AHIM Jesus Reigns logo">
+      <span class="brand-text">
+        <strong>Aron HaBrit International Ministries</strong>
+        <span>Jesus Reigns Worship Center · Laurel, MD</span>
+      </span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
     <nav class="links" id="navlinks">
@@ -681,6 +694,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
+        <img class="footer-logo" src="assets/ahim-logo.png" alt="" width="56" height="56">
         <div class="footer-h">Aron HaBrit International Ministries</div>
         <p>
           Jesus Reigns Worship Center. A church family in Laurel, Maryland
