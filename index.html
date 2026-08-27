@@ -114,6 +114,8 @@
   }
   .brand span { display: block; font-size: 0.73rem; letter-spacing: 0.02em; color: #a9b3c6; }
   .brand strong .brand-long { display: inline; font-size: inherit; letter-spacing: inherit; color: inherit; }
+  .brand .brand-center { display: inline; font-size: 0.8rem; color: #becbe0; }
+  .brand .brand-place { display: inline; font-size: 0.73rem; color: #a9b3c6; }
   nav.links { display: flex; align-items: center; gap: 1.6rem; }
   nav.links a {
     color: #ccd3e0; text-decoration: none; font-size: 0.88rem; font-weight: 500;
@@ -446,9 +448,10 @@
     .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
   }
   @media (max-width: 560px) {
-    .brand img { width: 40px; height: 40px; }
-    .brand strong { font-size: 1.2rem; line-height: 1.15; }
-    .brand span { font-size: 0.62rem; }
+    .brand img { width: 44px; height: 44px; }
+    .brand strong { font-size: 1.42rem; line-height: 1.15; }
+    .brand .brand-center { font-size: 0.78rem; }
+    .brand .brand-place { font-size: 0.62rem; }
     .brand strong .brand-long { display: none; }
   }
   @media (max-width: 520px) {
@@ -466,7 +469,7 @@
       <img src="assets/ahim-logo.png" alt="AHIM Jesus Reigns logo">
       <span class="brand-text">
         <strong>Aron HaBrit<span class="brand-long"> International Ministries</span></strong>
-        <span>Jesus Reigns Worship Center · Laurel, MD</span>
+        <span class="brand-sub"><span class="brand-center">Jesus Reigns Worship Center</span><span class="brand-place"> · Laurel, MD</span></span>
       </span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
