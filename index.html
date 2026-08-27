@@ -175,6 +175,8 @@
   @media (prefers-reduced-motion: reduce) {
     .hero-media img { animation: none; }
     .hero-media .frame-b { display: none; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    .about-collage > div img, .event .flyer img { transition: none; }
   }
   .hero h1 {
     font-style: italic; font-weight: 500;
@@ -199,6 +201,55 @@
     color: #a9b3c6; font-size: 0.84rem;
   }
   .hero-meta strong { color: #fff; display: block; font-size: 0.97rem; font-weight: 600; }
+
+  /* ---------- Scroll reveal ----------
+     Elements start visible; the .js class (set by script) hides them so the
+     page is never blank if JavaScript fails to run. */
+  .js .reveal { opacity: 0; transform: translateY(14px); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .js .reveal { transition: opacity .55s ease, transform .55s ease; }
+
+  /* Gentle hover motion, pointer devices only */
+  @media (hover: hover) {
+    .about-collage > div img,
+    .event .flyer img { transition: transform .35s ease; }
+    .about-collage > div:hover img,
+    .event .flyer:hover img { transform: scale(1.03); }
+  }
+
+  /* ---------- Recent services ---------- */
+  .recent {
+    margin-top: 2.2rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem;
+  }
+  .vcard {
+    display: block; width: 100%; padding: 0; text-align: left;
+    background: none; border: 0; color: inherit; cursor: pointer; font: inherit;
+  }
+  .vthumb {
+    position: relative; border-radius: 10px; overflow: hidden;
+    aspect-ratio: 16 / 9; background: var(--navy-dark);
+  }
+  .vthumb img { width: 100%; height: 100%; object-fit: cover; }
+  .vplay {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    background: rgba(14, 21, 38, 0.28); transition: background .25s ease;
+  }
+  .vcard:hover .vplay, .vcard:focus-visible .vplay { background: rgba(14, 21, 38, 0.12); }
+  .vplay span {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    display: grid; place-items: center;
+    transition: transform .25s ease;
+  }
+  .vcard:hover .vplay span { transform: scale(1.08); }
+  .vplay svg { width: 16px; height: 16px; fill: var(--navy-dark); margin-left: 3px; }
+  .vcard .vtitle {
+    margin-top: 0.6rem; font-family: var(--font-body);
+    font-size: 0.88rem; font-weight: 600; color: #fff; line-height: 1.3;
+  }
+  .vcard time { display: block; margin-top: 0.15rem; font-size: 0.78rem; color: #a9b3c6; }
+  .vcard iframe { width: 100%; height: 100%; border: 0; position: absolute; inset: 0; }
 
   /* ---------- Sections ---------- */
   section { padding: 5.5rem 0; }
@@ -446,6 +497,7 @@
     #watch .section-intro { text-align: center; margin-inline: auto; }
     .nav-toggle { display: block; }
     .about-grid, .pastor-grid, .watch-grid, .visit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .recent { grid-template-columns: 1fr 1fr; }
     .about-collage { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
     .about-collage > div { aspect-ratio: 4 / 3; }
     .about-collage .collage-main { grid-column: 1 / 3; grid-row: auto; aspect-ratio: 16 / 10; }
@@ -465,7 +517,7 @@
     .brand strong .brand-long { display: none; }
   }
   @media (max-width: 520px) {
-    .event-grid { grid-template-columns: 1fr; }
+    .event-grid, .recent { grid-template-columns: 1fr; }
     .hero { padding: 4.5rem 0 4rem; }
     .hero-meta { gap: 1.6rem 2.5rem; }
   }
@@ -526,7 +578,7 @@
   <section id="about">
     <div class="container about-grid">
       <div>
-        <h2 class="section-title">About Our Church</h2>
+        <h2 class="section-title reveal">About Our Church</h2>
         <p class="section-intro">
           Aron HaBrit International Ministries was established on October 10,
           2016 as a revival church in Laurel.
@@ -553,15 +605,15 @@
       </div>
     </div>
     <div class="container about-collage">
-      <div class="collage-main">
+      <div class="collage-main reveal">
         <img src="assets/worship-service.jpg" alt="The worship team leading the congregation at the Worship Center" loading="lazy">
         <span class="collage-cap">Sunday worship at the Worship Center</span>
       </div>
-      <div>
+      <div class="reveal">
         <img src="assets/baptism.jpg" alt="A believer being baptized in the river" loading="lazy">
         <span class="collage-cap">Baptism day</span>
       </div>
-      <div>
+      <div class="reveal">
         <img src="assets/fellowship.jpg" alt="Musicians playing guitar and djembe at a church gathering" loading="lazy">
         <span class="collage-cap">Worship nights</span>
       </div>
@@ -571,11 +623,11 @@
   <!-- Pastor -->
   <section id="pastor" class="band-alt">
     <div class="container pastor-grid">
-      <div class="pastor-photo">
+      <div class="pastor-photo reveal">
         <img src="assets/pastor-monish-stephen.jpg" alt="Pastor Monish Stephen">
       </div>
       <div>
-        <h2 class="section-title">Our Pastor</h2>
+        <h2 class="section-title reveal">Our Pastor</h2>
         <p class="pastor-name">Pastor Monish Stephen <span class="pastor-role">· Senior Pastor</span></p>
         <p class="section-intro">
           Pastor Monish Stephen leads Aron HaBrit International Ministries with
@@ -594,13 +646,13 @@
   <!-- Service Times -->
   <section id="services">
     <div class="container">
-      <h2 class="section-title">Service Times</h2>
+      <h2 class="section-title reveal">Service Times</h2>
       <p class="section-intro">
         Our main gathering is on Sunday morning, with services and prayer
         meetings through the week. There are no meetings on Wednesdays.
       </p>
       <div class="schedule">
-        <div class="schedule-row main">
+        <div class="reveal schedule-row main">
           <div class="schedule-day">Every Sunday</div>
           <div>
             <div class="schedule-name">Sunday Worship</div>
@@ -608,7 +660,7 @@
           </div>
           <div class="schedule-time">10:00 AM – 2:00 PM</div>
         </div>
-        <div class="schedule-row">
+        <div class="reveal schedule-row">
           <div class="schedule-day">Every Saturday</div>
           <div>
             <div class="schedule-name">Praise, Worship &amp; Healing</div>
@@ -616,7 +668,7 @@
           </div>
           <div class="schedule-time">7:30 – 9:30 PM</div>
         </div>
-        <div class="schedule-row">
+        <div class="reveal schedule-row">
           <div class="schedule-day">Every Friday</div>
           <div>
             <div class="schedule-name">Prayer Gathering</div>
@@ -624,7 +676,7 @@
           </div>
           <div class="schedule-time">8:00 PM</div>
         </div>
-        <div class="schedule-row">
+        <div class="reveal schedule-row">
           <div class="schedule-day">Tuesday &amp; Thursday</div>
           <div>
             <div class="schedule-name">Online Prayer Meeting</div>
@@ -645,13 +697,13 @@
   <!-- Events -->
   <section id="events" class="band-alt">
     <div class="container">
-      <h2 class="section-title">Events</h2>
+      <h2 class="section-title reveal">Events</h2>
       <p class="section-intro">
         Highlights from this year's gatherings. New events are announced on our
         <a href="https://www.facebook.com/AronHaBrit.International/" target="_blank" rel="noopener" style="color: var(--gold-dark); font-weight: 600;">Facebook page</a>.
       </p>
       <div class="event-grid">
-        <div class="event">
+        <div class="event reveal">
           <a class="flyer" href="assets/events/21-days-fasting.jpg" target="_blank" rel="noopener">
             <img src="assets/events/21-days-fasting.jpg" alt="21 Days Fasting Prayer flyer" loading="lazy">
           </a>
@@ -659,7 +711,7 @@
           <h3>21 Days Fasting Prayer</h3>
           <p>Continuous praise and worship, healing, deliverance, and prophetic impartation. Pastor Monish Stephen ministering.</p>
         </div>
-        <div class="event">
+        <div class="event reveal">
           <a class="flyer" href="assets/events/prophetical-sunday.jpg" target="_blank" rel="noopener">
             <img src="assets/events/prophetical-sunday.jpg" alt="Glorious Prophetical Sunday flyer" loading="lazy">
           </a>
@@ -667,7 +719,7 @@
           <h3>Glorious Prophetical Sunday</h3>
           <p>With Pastor Monish Stephen and guest minister Prophet Tijo Thomas.</p>
         </div>
-        <div class="event">
+        <div class="event reveal">
           <a class="flyer" href="assets/events/deliverance-conference.jpg" target="_blank" rel="noopener">
             <img src="assets/events/deliverance-conference.jpg" alt="Glorious Deliverance Conference flyer" loading="lazy">
           </a>
@@ -675,7 +727,7 @@
           <h3>Glorious Deliverance Conference</h3>
           <p>Special conference with guest minister Pastor Shajan George. Saturday 8:00 PM and Sunday 10:00 AM.</p>
         </div>
-        <div class="event">
+        <div class="event reveal">
           <a class="flyer" href="assets/events/vbs-2026.jpg" target="_blank" rel="noopener">
             <img src="assets/events/vbs-2026.jpg" alt="2026 Vacation Bible School flyer" loading="lazy">
           </a>
@@ -690,7 +742,7 @@
   <!-- Watch Online -->
   <section id="watch" class="watch">
     <div class="container">
-      <h2 class="section-title">Watch Online</h2>
+      <h2 class="section-title reveal">Watch Online</h2>
       <p class="section-intro">
         Sunday services and special meetings are streamed on YouTube and Facebook.
       </p>
@@ -723,27 +775,53 @@
           </a>
         </div>
       </div>
+      <div class="recent">
+        <button class="vcard reveal" type="button" data-video="pT-_pRZWRJ8" aria-label="Play: Sunday Service, August 16">
+          <span class="vthumb">
+            <img src="assets/videos/aug17.jpg" alt="" loading="lazy">
+            <span class="vplay" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          </span>
+          <div class="vtitle">Sunday Service</div>
+          <time datetime="2026-08-16">August 16, 2026</time>
+        </button>
+        <button class="vcard reveal" type="button" data-video="9NFdDge2EBw" aria-label="Play: Deliverance Sunday, August 9">
+          <span class="vthumb">
+            <img src="assets/videos/aug10.jpg" alt="" loading="lazy">
+            <span class="vplay" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          </span>
+          <div class="vtitle">Deliverance Sunday</div>
+          <time datetime="2026-08-09">August 9, 2026</time>
+        </button>
+        <button class="vcard reveal" type="button" data-video="5n4UW70Sx_I" aria-label="Play: Sunday Service, July 26">
+          <span class="vthumb">
+            <img src="assets/videos/jul27.jpg" alt="" loading="lazy">
+            <span class="vplay" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+          </span>
+          <div class="vtitle">Sunday Service</div>
+          <time datetime="2026-07-26">July 26, 2026</time>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- Ministries -->
   <section id="ministries">
     <div class="container">
-      <h2 class="section-title">Ministries</h2>
+      <h2 class="section-title reveal">Ministries</h2>
       <div class="ministry-grid">
-        <div class="ministry">
+        <div class="ministry reveal">
           <h3>Worship</h3>
           <p>The worship team leads songs in Malayalam, English, Tamil, and Hindi every Sunday.</p>
         </div>
-        <div class="ministry">
+        <div class="ministry reveal">
           <h3>Sunday School</h3>
           <p>Bible lessons and activities for children during the Sunday service.</p>
         </div>
-        <div class="ministry">
+        <div class="ministry reveal">
           <h3>Youth</h3>
           <p>Bible study and fellowship for young people and young adults.</p>
         </div>
-        <div class="ministry">
+        <div class="ministry reveal">
           <h3>Prayer &amp; Outreach</h3>
           <p>Intercessory prayer and service to the Laurel community.</p>
         </div>
@@ -763,7 +841,7 @@
   <!-- Visit -->
   <section id="visit" class="band-alt">
     <div class="container">
-      <h2 class="section-title">Visit Us</h2>
+      <h2 class="section-title reveal">Visit Us</h2>
       <div class="visit-grid">
         <div class="visit-details">
           <div class="visit-row">
@@ -851,7 +929,40 @@
 </footer>
 
 <script>
+  document.documentElement.classList.add('js');
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal sections as they scroll into view (once each).
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Recent service cards load their video only when clicked.
+  document.querySelectorAll('.vcard').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var id = card.getAttribute('data-video');
+      var thumb = card.querySelector('.vthumb');
+      if (!id || !thumb || thumb.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      f.title = card.querySelector('.vtitle').textContent;
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      thumb.innerHTML = '';
+      thumb.appendChild(f);
+    });
+  });
   document.querySelectorAll('#navlinks a').forEach(function (link) {
     link.addEventListener('click', function () {
       document.getElementById('navlinks').classList.remove('open');
