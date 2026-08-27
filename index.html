@@ -434,7 +434,16 @@
       width: auto; align-self: flex-start;
       padding: 0.7rem 1.5rem; margin: 0.7rem 0 1rem;
     }
+    /* Centered on narrow screens: the hero and short section lead-ins.
+       Long body copy and scannable data (schedule, contact rows) stay left. */
+    .hero h1, .verse-ref, .hero .sub { text-align: center; }
+    .hero h1, .hero .sub { margin-inline: auto; }
     .hero-ctas { justify-content: center; }
+    .hero-meta { justify-content: center; text-align: center; gap: 2rem; }
+    .section-title { text-align: center; }
+    #services .section-intro,
+    #events .section-intro,
+    #watch .section-intro { text-align: center; margin-inline: auto; }
     .nav-toggle { display: block; }
     .about-grid, .pastor-grid, .watch-grid, .visit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .about-collage { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
