@@ -18,7 +18,11 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
+      # The site lives on main. Say so rather than relying on whichever ref
+      # this happens to be started from.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -34,4 +38,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html assets/videos
           git commit -m "Show the latest services from the Sunday Service playlist"
-          git push
+          git push origin HEAD:main
