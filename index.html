@@ -489,6 +489,14 @@
     }
     /* Centered on narrow screens: the hero and short section lead-ins.
        Long body copy and scannable data (schedule, contact rows) stay left. */
+    /* Fill the first screen so the next section does not show as a band of
+       white under the photo. min-height only ever grows the hero. */
+    .hero {
+      min-height: calc(100vh - 76px);
+      min-height: calc(100svh - 76px);
+      display: grid; align-content: center;
+    }
+    .hero-meta { margin-top: 2.5rem; }
     .hero h1, .verse-ref, .hero .sub { text-align: center; }
     .hero h1, .hero .sub { margin-inline: auto; }
     .hero-ctas { justify-content: center; }
@@ -581,15 +589,15 @@
       <div>
         <h2 class="section-title reveal">About Our Church</h2>
         <p class="section-intro">
-          Aron HaBrit International Ministries was established on October 10,
-          2016 as a revival church in Laurel.
+          Aron HaBrit International Ministries was established in Laurel on
+          October 10, 2016, as a revival church. Families from many backgrounds
+          have made it their home in the years since.
         </p>
         <p class="section-intro">
-          Our services are held in Malayalam and English, and our worship
-          includes songs in Tamil and Hindi. Families of many backgrounds call
-          this church home, and every generation worships together here.
-          Children have Sunday School before the service and their own
-          gathering while it runs; youth and adults worship together.
+          Preaching is in Malayalam and English, and we sing in Tamil and Hindi
+          as well. The children have Sunday School and an hour of their own
+          during the service; everyone else worships together, one generation
+          beside the next.
         </p>
       </div>
       <div class="name-card">
