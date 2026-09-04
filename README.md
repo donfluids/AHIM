@@ -23,9 +23,35 @@ Everything lives in `index.html` — open it in any text editor:
 - **Events** — each event is an `event` block; drop a new flyer image into `assets/events/` and copy one of the existing blocks.
 - **The verse in the hero** — search for `Isaiah 62:3` and update the quote and reference when the church's verse changes.
 - **Contact email / address** — search for `aronhabrit.international@gmail.com` or `116 St Marys Pl` and update everywhere they appear.
-- **Featured video** — in the Watch Online section, replace the video ID in `https://www.youtube.com/embed/...` with a newer one. The ID is the part after `v=` in a YouTube link (e.g. `youtube.com/watch?v=zyNqtfg_IC4` → `zyNqtfg_IC4`). Worth refreshing every month or two so the newest service is on show.
+- **Service videos** — these look after themselves. See *Service videos update themselves* below.
 - **Watch Live button** — points at `https://www.youtube.com/@AronHaBrit.International/live`, which YouTube sends straight to the current broadcast when the church is streaming.
 - **Colors** — edit the CSS variables at the top of the `<style>` block (`--navy`, `--gold`, etc.).
+
+## Service videos update themselves
+
+The featured player and the three cards in the Watch Online section are not
+edited by hand. `scripts/refresh_videos.py` reads the **Sunday Service**
+playlist on the church's YouTube channel and rewrites them: the newest service
+goes in the player, the next three go on the cards, and a thumbnail for each is
+saved into `assets/videos/`. Thumbnails are copied into the repository rather
+than linked to YouTube because the page only allows images the site serves
+itself.
+
+`.github/workflows/refresh-videos.yml` runs it once a day and commits only when
+the playlist has actually moved on. Nothing needs doing after a service beyond
+adding the video to the **Sunday Service** playlist as usual.
+
+- **To refresh it right now** — GitHub → **Actions** → *Refresh service videos*
+  → **Run workflow**. The site redeploys on its own afterwards.
+- **If the videos ever stop updating** — GitHub switches off scheduled jobs in
+  repositories that have had no activity for 60 days, and emails a warning
+  first. Re-enable it from the Actions tab, or just run it by hand as above.
+- **Service dates** come from the upload date, not the video title: services are
+  uploaded on the Monday after, so the date shown is the Sunday before.
+- **Card names** are taken from the start of each video title, so
+  `DELIVERANCE SUNDAY | Pr. Shajan George | ...` becomes "Deliverance Sunday".
+  Anything that opens with "Sunday Service" in any of its various spellings
+  becomes "Sunday Service".
 
 ## Deploying with GitHub Pages (free)
 
