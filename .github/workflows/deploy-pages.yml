@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # A push made with GITHUB_TOKEN does not start another workflow, so the video
+  # refresh has to hand over here explicitly.
+  workflow_run:
+    workflows: ["Refresh service videos"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -17,9 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Publish site to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
-          exclude_assets: '.github,README.md'
+          exclude_assets: '.github,scripts,README.md'
