@@ -27,7 +27,7 @@ import xml.etree.ElementTree as ET
 
 from PIL import Image
 
-# The "Sunday Service" playlist on youtube.com/@AronHaBrit.International —
+# The "Sunday Service" playlist on youtube.com/@AronHaBrit.International holds
 # the live-streamed services, as opposed to Messages, Testimonies or Worship songs.
 PLAYLIST_ID = "PLgukQ1ZjRUXqIS7zrMnMSG6qmduATsJNk"
 FEED_URL = f"https://www.youtube.com/feeds/videos.xml?playlist_id={PLAYLIST_ID}"
@@ -142,8 +142,8 @@ def featured_block(video):
         '        <div class="video-frame">\n'
         "          <iframe\n"
         f'            src="https://www.youtube.com/embed/{video["id"]}"\n'
-        f'            title="{short_title(video["title"])}, {date:%B} {date.day}, {date:%Y} '
-        '— AHIM Jesus Reigns Worship Center"\n'
+        f'            title="{short_title(video["title"])} at AHIM Jesus Reigns Worship '
+        f'Center, {date:%B} {date.day}, {date:%Y}"\n'
         '            allow="accelerometer; autoplay; clipboard-write; encrypted-media; '
         'gyroscope; picture-in-picture"\n'
         "            allowfullscreen loading=\"lazy\"></iframe>\n"

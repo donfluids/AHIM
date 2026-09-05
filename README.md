@@ -1,10 +1,10 @@
-# AHIM — Aron HaBrit International Ministries Website
+# Aron HaBrit International Ministries Website
 
-A modern, mobile-friendly, single-page website for **Aron HaBrit International Ministries — Jesus Reigns Worship Center**, a multilingual church (Malayalam, English, Tamil, and Hindi) in Laurel, Maryland.
+A modern, mobile-friendly, single-page website for **Aron HaBrit International Ministries - Jesus Reigns Worship Center**, a multilingual church (Malayalam, English, Tamil, and Hindi) in Laurel, Maryland.
 
 ## What's included
 
-- **`index.html`** — the entire site (HTML, CSS, and a few lines of JavaScript in one file; no build step, no dependencies).
+- **`index.html`**: the entire site (HTML, CSS, and a few lines of JavaScript in one file; no build step, no dependencies).
   - Hero led by the church's verse (Isaiah 62:3), with service time and location at a glance
   - About section (church story and values)
   - Our Pastor section (Pastor Monish Stephen)
@@ -17,15 +17,15 @@ A modern, mobile-friendly, single-page website for **Aron HaBrit International M
 
 ## Updating content
 
-Everything lives in `index.html` — open it in any text editor:
+Everything lives in `index.html`. Open it in any text editor:
 
-- **Service times** — search for `Service Times` and edit the `schedule-row` blocks.
-- **Events** — each event is an `event` block; drop a new flyer image into `assets/events/` and copy one of the existing blocks.
-- **The verse in the hero** — search for `Isaiah 62:3` and update the quote and reference when the church's verse changes.
-- **Contact email / address** — search for `aronhabrit.international@gmail.com` or `116 St Marys Pl` and update everywhere they appear.
-- **Service videos** — these look after themselves. See *Service videos update themselves* below.
-- **Watch Live button** — points at `https://www.youtube.com/@AronHaBrit.International/live`, which YouTube sends straight to the current broadcast when the church is streaming.
-- **Colors** — edit the CSS variables at the top of the `<style>` block (`--navy`, `--gold`, etc.).
+- **Service times**: search for `Service Times` and edit the `schedule-row` blocks.
+- **Events**: each event is an `event` block; drop a new flyer image into `assets/events/` and copy one of the existing blocks.
+- **The verse in the hero**: search for `Isaiah 62:3` and update the quote and reference when the church's verse changes.
+- **Contact email / address**: search for `aronhabrit.international@gmail.com` or `116 St Marys Pl` and update everywhere they appear.
+- **Service videos**: these look after themselves. See *Service videos update themselves* below.
+- **Watch Live button**: points at `https://www.youtube.com/@AronHaBrit.International/live`, which YouTube sends straight to the current broadcast when the church is streaming.
+- **Colors**: edit the CSS variables at the top of the `<style>` block (`--navy`, `--gold`, etc.).
 
 ## Service videos update themselves
 
@@ -41,9 +41,9 @@ itself.
 the playlist has actually moved on. Nothing needs doing after a service beyond
 adding the video to the **Sunday Service** playlist as usual.
 
-- **To refresh it right now** — GitHub → **Actions** → *Refresh service videos*
+- **To refresh it right now**: GitHub → **Actions** → *Refresh service videos*
   → **Run workflow**. The site redeploys on its own afterwards.
-- **If the videos ever stop updating** — GitHub switches off scheduled jobs in
+- **If the videos ever stop updating**: GitHub switches off scheduled jobs in
   repositories that have had no activity for 60 days, and emails a warning
   first. Re-enable it from the Actions tab, or just run it by hand as above.
 - **Service dates** come from the upload date, not the video title: services are
