@@ -471,6 +471,8 @@
   .copyright {
     padding-top: 1.8rem; text-align: center; font-size: 0.78rem; color: #8b96aa;
   }
+  /* Long enough to push the page wider than a phone once text scaling is on. */
+  a[href^="mailto:"] { overflow-wrap: anywhere; }
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
@@ -518,6 +520,7 @@
     .event-grid { grid-template-columns: 1fr 1fr; }
     .ministry-grid { grid-template-columns: 1fr; gap: 0; }
     .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+    footer { padding-bottom: 3.5rem; }
   }
   @media (max-width: 560px) {
     .brand img { width: 44px; height: 44px; }
@@ -945,7 +948,7 @@
         </div>
       </div>
     </div>
-    <p class="copyright">© <span id="year">2026</span> Aron HaBrit International Ministries, Jesus Reigns Worship Center. All rights reserved.</p>
+    <p class="copyright">© <span id="year">2026</span> Aron HaBrit International Ministries. All rights reserved.</p>
   </div>
 </footer>
 
