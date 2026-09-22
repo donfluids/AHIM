@@ -34,9 +34,11 @@ jobs:
       - run: pip install --quiet pillow
       - run: python scripts/refresh_videos.py
       - name: Commit if the videos changed
+        id: commit
         run: |
           if [ -z "$(git status --porcelain)" ]; then
             echo "Nothing to do."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name  "github-actions[bot]"
@@ -44,3 +46,16 @@ jobs:
           git add index.html assets/videos
           git commit -m "Show the latest services from the Sunday Service playlist"
           git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      # Publish here rather than leaving it to the deploy workflow. A push made
+      # with GITHUB_TOKEN starts no other workflow, and the workflow_run trigger
+      # that was meant to cover that is read from the default branch, which does
+      # not carry the deploy workflow. The result was a week of correct commits
+      # on main that never reached the site.
+      - name: Publish the updated site
+        if: steps.commit.outputs.changed == 'true'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          exclude_assets: '.github,scripts,README.md'
